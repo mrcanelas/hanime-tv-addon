@@ -1,0 +1,13 @@
+{
+	"name": "stremio-addon-hanimetv",
+	"version": "0.0.1",
+	"description": "",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"axios": "^0.21.1",
+		"hanime-extractor": "^2.0.0",
+		"stremio-addon-sdk": "1.1.x"
+	}
+}
