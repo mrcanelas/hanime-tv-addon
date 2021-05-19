@@ -121,11 +121,11 @@ builder.defineCatalogHandler(async (args) => {
     return {
       id: obj.slug,
       name: obj.name,
-      poster: obj.poster_url,
+      poster: obj.cover_url,
 	  logo: logo,
       genre: genres,
       description: obj.description.replace("<p>", ""),
-      posterShape: "landscape",
+      posterShape: "poster",
       type: "movie",
     };
   }
@@ -167,7 +167,7 @@ builder.defineMetaHandler(async (args) => {
   const metas = {
     id: resp.slug,
     name: resp.name,
-	logo: logo,
+	  logo: logo,
     background: resp.poster_url,
     genre: new_gen,
     description: resp.description.replace(/<p>/g, "").trim(),
