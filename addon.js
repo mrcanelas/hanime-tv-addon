@@ -5,7 +5,7 @@ const { getStream } = require("./lib/getStream");
 const { getMeta } = require("./lib/getMeta");
 const { getGenre } = require("./lib/getGenres");
 const { getSearch } = require("./lib/getSearch");
-const logo = 'https://i.imgur.com/LBpnYYs.png'
+const logo = 'https://i.imgur.com/sZ7Fmbl.png'
 
 const manifest = {
   id: "hanime-tv-addon",
@@ -122,9 +122,9 @@ builder.defineCatalogHandler(async (args) => {
       id: obj.slug,
       name: obj.name,
       poster: obj.cover_url,
-	  logo: logo,
+	    logo: logo,
       genre: genres,
-      description: obj.description.replace("<p>", ""),
+      description: obj.description.replace(/([</p>\n])/g, "").trim(),
       posterShape: "poster",
       type: "movie",
     };
@@ -170,10 +170,11 @@ builder.defineMetaHandler(async (args) => {
 	  logo: logo,
     background: resp.poster_url,
     genre: new_gen,
-    description: resp.description.replace(/<p>/g, "").trim(),
+    description: resp.description.replace(/([</p>\n])/g, "").trim(),
     posterShape: "landscape",
     type: "movie",
   };
+  console.log(metas)
   return Promise.resolve({ meta: metas });
 });
 
