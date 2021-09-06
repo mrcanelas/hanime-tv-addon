@@ -10,6 +10,9 @@ const logo = 'https://i.imgur.com/sZ7Fmbl.png'
 const manifest = {
   id: "hanime-tv-addon",
   version: "0.0.2",
+  behaviorHints: {
+    adult: true
+  },
   catalogs: [
     {
       type: "movie",
