@@ -177,7 +177,6 @@ builder.defineMetaHandler(async (args) => {
     posterShape: "landscape",
     type: "movie",
   };
-  console.log(metas)
   return Promise.resolve({ meta: metas });
 });
 
@@ -188,11 +187,10 @@ builder.defineStreamHandler(async (args) => {
     const name = titleize(obj.video_stream_group_id.replace(/-/g, " "));
     return {
       name: `Hanime.TV\n${obj.height}p`,
-      fileIdx: index + 1,
       title: `${name.slice(0, -3)}\n 💾 ${obj.filesize_mbs} MB ⌚ ${(
         obj.duration_in_ms / 60000
       ).toFixed()} min`,
-      url: `https://weeb.hanime.tv/weeb-api-cache/api/v8/m3u8s/${obj.id}.m3u8`,
+    	url: obj.url || ""
     };
   });
   return Promise.resolve({ streams: streams });
