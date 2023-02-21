@@ -9,7 +9,7 @@ const logo = "https://i.imgur.com/sZ7Fmbl.png";
 
 const manifest = {
   id: "hanime-tv-addon",
-  version: "0.0.2",
+  version: "0.0.3",
   behaviorHints: {
     adult: true,
   },
@@ -102,7 +102,7 @@ const manifest = {
   resources: ["catalog", "stream", "meta"],
   types: ["movie"],
   name: "Hanime.TV",
-  icon: "https://img.android-apk.org/imgs/3/9/6/3963a4a6ae1e14f9824fc89f57bc5a17.png",
+  icon: logo,
   description:
     "Watch hentai online free download HD on mobile phone tablet laptop desktop. Stream online, regularly released uncensored, subbed, in 720p and 1080p!",
 };
